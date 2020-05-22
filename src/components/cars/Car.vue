@@ -6,7 +6,7 @@
     {{ car.brand }}
   </div>
   <div class="card-body">
-    <p class="card-text">Price: {{ car.price }}</p>
+    <p class="card-text">PRICE: {{ car.price }}</p>
     <div class="row">
     <div class="col">
       <input type="number" class="form-control" v-model="quantity">
