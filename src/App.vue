@@ -11,6 +11,9 @@
   export default {
     components: {
       appHeader: Header
+    },
+    created() {
+      this.$store.dispatch('initCars')
     }
   }
 </script>

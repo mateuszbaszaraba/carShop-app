@@ -8,17 +8,13 @@
     import car from './Car';
 
     export default {
-        data() {
-            return {
-                cars: [
-                    { id: 1, brand: 'BMW', price: '50'},
-                    { id: 2, brand: 'Mercedes', price: '55'},
-                    { id: 3, brand: 'VW', price: '20'}
-                ]
-            }
-        },
         components: {
             appCar: car
+        },
+        computed: {
+            cars() {
+                return this.$store.getters.cars
+            }
         }
     }
 </script>
