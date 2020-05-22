@@ -3,12 +3,18 @@
   <div class="col mb-4">
     <div class="card" style="margin-top: 2vh">
   <div class="card-header">
-    Featured
+    {{ car.brand }}
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p class="card-text">Price: {{ car.price }}</p>
+    <div class="row">
+    <div class="col">
+      <input type="number" class="form-control" v-model="quantity">
+    </div>
+    <div class="col">
+      <a href="#" class="btn btn-success">Buy</a>
+    </div>
+    </div>
   </div>
 </div>
   </div>
@@ -17,6 +23,11 @@
 
 <script>
     export default {
-        props: ['car']
+        props: ['car'],
+        data() {
+          return {
+            quantity: 0,
+          }
+        }
     }
 </script>

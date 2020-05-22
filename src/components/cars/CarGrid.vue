@@ -13,8 +13,7 @@
                 cars: [
                     { id: 1, brand: 'BMW', price: '50'},
                     { id: 2, brand: 'Mercedes', price: '55'},
-                    { id: 3, brand: 'VW', price: '20'},
-                    { id: 4, brand: 'Audi', price: '40'}
+                    { id: 3, brand: 'VW', price: '20'}
                 ]
             }
         },
