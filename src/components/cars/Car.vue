@@ -12,7 +12,10 @@
       <input type="number" class="form-control" v-model="quantity">
     </div>
     <div class="col">
-      <a href="#" class="btn btn-success">Buy</a>
+      <a 
+        href="#" 
+        class="btn btn-success"
+        @click="buyCars">Buy</a>
     </div>
     </div>
   </div>
@@ -27,6 +30,17 @@
         data() {
           return {
             quantity: 0,
+          }
+        },
+        methods: {
+          buyCars() {
+            const order = {
+              carId: this.car.id,
+              carPrice: this.car.price,
+              quantity: this.quantity
+            };
+            this.$store.dispatch('buyStock', order);
+            this.quantity = 0
           }
         }
     }
