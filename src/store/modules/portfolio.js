@@ -15,6 +15,9 @@ const mutations = {
             })
             console.log('done')
         }
+    },
+    'SET_PORTFOLIO'(state, portfolio) {
+        state.cars = portfolio.carPortfolio ? portfolio.carPortfolio : []
     }
 };
 
@@ -25,11 +28,22 @@ const actions = {
 };
 
 const getters = {
-    
+    carPortfolio(state, getters) {
+        return state.cars.map(car => {
+            const record = getters.cars.find(element => element.id == car.id);
+            return {
+                id: car.id,
+                quantity: car.quantity,
+                brand: record.brand,
+                price: record.price
+            }
+        })
+    }
 }
 
 export default {
     state,
     mutations,
-    actions
+    actions,
+    getters
 }

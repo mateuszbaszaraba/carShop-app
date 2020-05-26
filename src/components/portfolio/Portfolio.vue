@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-car></app-car>
+        <app-car v-for="car in cars" :key="car.id" :car="car"></app-car>
     </div>
 </template>
 
@@ -12,7 +12,9 @@
             appCar: car
         },
         computed: {
-            
+            cars() {
+                return this.$store.getters.carPortfolio
+            }
         }
     };
 </script>
