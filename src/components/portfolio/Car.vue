@@ -2,7 +2,7 @@
 <div class="row row-cols-1 row-cols-md-2">
   <div class="col mb-4">
     <div class="card" style="margin-top: 2vh">
-  <div class="card-header">
+  <div class="card-header bg-success text-white">
     {{ car.brand }}
   </div>
   <div class="card-body">
