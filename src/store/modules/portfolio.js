@@ -4,7 +4,7 @@ const state = {
 };
 
 const mutations = {
-    'BUY_CAR'(state, {carId, quantity, stockPrice}) {
+    'BUY_CAR'(state, {carId, quantity, carPrice}) {
         const record = state.cars.find(element => element.id == carId);
         if(record) {
             record.quantity += quantity;
@@ -13,8 +13,8 @@ const mutations = {
                 id: carId,
                 quantity: quantity
             })
-            console.log('done')
         }
+        state.funds -= carPrice * quantity
     },
     'SET_PORTFOLIO'(state, portfolio) {
         state.cars = portfolio.carPortfolio ? portfolio.carPortfolio : []
