@@ -16,14 +16,26 @@ const mutations = {
         }
         state.funds -= carPrice * quantity
     },
+    'SELL_CAR'(state, {carId, quantity, carPrice}) {
+        const record = state.cars.find(element => element.id == carId);
+        if (record.quantity > quantity) {
+            record.quantity -= quantity;
+        } else {
+            state.cars.splice(state.cars.indexOf(record), 1);
+        }
+        state.funds += carPrice * quantity;
+    },
     'SET_PORTFOLIO'(state, portfolio) {
         state.cars = portfolio.carPortfolio ? portfolio.carPortfolio : []
     }
 };
 
 const actions = {
-    buyStock: ({commit}, order) => {
+    buyCar: ({commit}, order) => {
         commit('BUY_CAR', order);
+    },
+    sellCar: ({commit}, order) => {
+        commit('SELL_CAR', order)
     }
 };
 

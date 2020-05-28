@@ -39,7 +39,7 @@
               carPrice: this.car.price,
               quantity: this.quantity
             };
-            this.$store.dispatch('buyStock', order);
+            this.$store.dispatch('buyCar', order);
             this.quantity = 0
           }
         }

@@ -15,7 +15,7 @@
       <a 
         href="#" 
         class="btn btn-success"
-        @click="buyCars">Buy</a>
+        @click="sellCar">Sell</a>
     </div>
     </div>
   </div>
@@ -33,13 +33,13 @@
           }
         },
         methods: {
-          buyCars() {
+          sellCar() {
             const order = {
               carId: this.car.id,
               carPrice: this.car.price,
               quantity: this.quantity
             };
-            this.$store.dispatch('buyStock', order);
+            this.$store.dispatch('sellCar', order);
             this.quantity = 0
           }
         }
